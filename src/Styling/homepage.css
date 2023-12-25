@@ -1,0 +1,87 @@
+.hMain {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.middleSectionh {
+    height: 60%;
+    padding: 20px;
+    gap: 40px;
+    margin-top: 20px;
+    border-style: groove groove;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+}
+
+#link0 {
+    color: white;
+    text-decoration: none;
+ }
+
+.loginButton {
+    background-color: #444;
+    height: 40px;
+    width: 110px;
+    position: absolute;
+    top: 1px;
+    left: 900px;
+    margin-top: 4px;
+    color: white;
+    border-radius: 4px;
+
+}
+
+@media screen and (max-width:450px) {
+    .hMain {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        height: 100%;
+        background-image: url("../Images/UniversityofGhana.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    
+
+.middleSectionh {
+    height: 90%;
+    padding: 20px;
+    margin-top: 20px;
+    border-style: groove groove;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    border-radius: 4px;
+}
+
+
+.loginButton {
+    background-color: #444;
+    height: 40px;
+    width: 110px;
+    left: 280px;
+    overflow-x: hidden;
+    margin-right: 7px;
+    margin-top: 10px;
+    color: white;
+    border-radius: 4px;
+
+}
+#link0 {
+    color: white;
+    text-decoration: none;
+ }
+
+}
+
+

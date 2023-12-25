@@ -1,0 +1,49 @@
+
+.ibottomSection {
+    background-color: #eee;
+    width: 100%;
+}
+
+.ibottomSectionmain {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    
+}
+
+.ibs1 {
+  
+}
+
+@media screen and (max-width:450px) {
+    
+
+.ibottomSection {
+    background-color: #eee;
+    width: 100%;
+}
+
+.ibottomSectionmain {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+}
+
+
+@media screen and (max-width:800px) {
+    
+
+    .ibottomSection {
+        background-color: #444;
+        width: 100%;
+    
+    }
+    
+    .ibottomSectionmain {
+        margin: 20px;
+    }
+    
+    }
