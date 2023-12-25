@@ -1,48 +1,60 @@
 import axios from "axios";
 import { getAuth,signInWithEmailAndPassword , createUserWithEmailAndPassword } from "firebase/auth";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-/*
-TODO:
-Backedn
-add a route for viewing the details of particular customer Admin
-add a route for registering an admin
-*/
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyD2zccHkFhUb16CPQW_yauasQlyKkxjmP0",
+  authDomain: "pkgdel-b7b61.firebaseapp.com",
+  projectId: "pkgdel-b7b61",
+  storageBucket: "pkgdel-b7b61.appspot.com",
+  messagingSenderId: "999639158885",
+  appId: "1:999639158885:web:20ec12e5bebe532f53f68c",
+  measurementId: "G-FK14MHVT34"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 
 const auth = getAuth();
-createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
-
 
 class Admin {
-    constructor(type ="Admin",isloggedIn = false,email,password) {
-        this.type = type;
-        this.email = email;
-        this.password=password;
+    constructor() {
+        this.type = "Admin";
+        this.email = "";
+        this.password="";
+        this.dbresponse ="";
+        this.isloggedIn = false;
+        this.isRegistered = false;
     }
+
+    setPassndEmail(email,password) {
+       this.email = email;
+       this.password = password;
+    }
+
     
     register(FirstName,LastName,Username) {
-        dbresponse ="";
+     
         //Verify username fist in Mongo DB collection by trying to create a document
-        axios.post('',{FirstName:FirstName,LastName:LastName,UserName:Username,Email:this.email})
+        axios.post('http://localhost:4000/admin/adminregister',{FirstName:FirstName,LastName:LastName,UserName:Username,Email:this.email})
         .catch((error)=>{
             console.log(error.message)
-            dbresponse = error.message;
+            this.dbresponse = error.message;
         })
         
-        if(dbresponse!="") { 
+        if(this.dbresponse!="") { 
         createUserWithEmailAndPassword(auth, this.email,this.password)
         .then(() => {
           // Signed up 
-           console.log("User Successfully signed up");
+           console.log("Admin Successfully signed up");
         })
         .catch((error) => {
         const errorCode = error.code;
@@ -52,21 +64,17 @@ class Admin {
     }
     }
 
-    login(username) {
+    login() {
         //verify user
-        signInWithEmailAndPassword(auth, email, password)
-       .then((userCredential) => {
-  
-        //fetch all user information
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
-
+        signInWithEmailAndPassword(auth,this.email,this.password)
+       .then(() => {
+          this.isloggedIn=true;
+        })
+       .catch((error) => {
+        console.log(error.message);
+       });
     }
+    
     viewAllUsers() {
        
     }
@@ -81,3 +89,5 @@ class Admin {
       //remove a particular customer
     }
 }
+
+export {Admin};

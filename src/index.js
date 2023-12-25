@@ -14,6 +14,7 @@ import HelpandSupport from './Pages/HelpandSupport';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MissingGradeForm from './Pages/MissingGradeForm';
 import InstructorContact from './Pages/InstructorContact';
+import Register from './Pages/Register';
 
  
 
@@ -42,6 +43,9 @@ root.render(
         </Route>
         <Route path="/Ins">
         <InstructorContact />
+        </Route>
+        <Route path="/adreg">
+        <Register />
         </Route>
       </Switch>
     </Router>
