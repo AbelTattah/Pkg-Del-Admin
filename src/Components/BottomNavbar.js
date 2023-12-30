@@ -14,4 +14,4 @@ function BottomNavbar() {
   )
 }
 
-export default BottomNavbar
+export default BottomNavbar;
