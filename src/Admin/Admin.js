@@ -3,6 +3,7 @@ import { getAuth,signInWithEmailAndPassword , createUserWithEmailAndPassword } f
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import MarkerMapper from "../Components/MarkerMapper";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -33,6 +34,9 @@ class Admin {
         this.dbresponse ="";
         this.isloggedIn = false;
         this.isRegistered = false;
+        this.activeRiders={};
+        this.activeRidersMap=<></>
+        this.avrdfind = false;
     }
 
     setPassndEmail(email,password) {
@@ -73,6 +77,29 @@ class Admin {
        .catch((error) => {
         console.log(error.message);
        });
+    }
+
+    seeAllMovingRiders() {
+
+      axios({
+        method: 'get',
+        url: 'http://localhost:4000/admin/avrideron',
+        responseType: 'stream'
+      })
+      .then((response)=>{
+        this.activeRiders = response.data
+         //Map the active riders 
+         console.dir(response.data);
+        this.activeRidersMap = <MarkerMapper data={response.data} />;
+        this.avrdfind = true;
+        console.dir(`Success:${this.avrdfind}`);     
+        console.dir(this.activeRiders);
+      })
+      .catch((error)=>{
+        console.log(error.message);
+        console.log("An error occured while fetching active riders");
+      });
+      
     }
     
     viewAllUsers() {

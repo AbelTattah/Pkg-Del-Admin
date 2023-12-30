@@ -20,22 +20,34 @@ import React from "react";
    Meaning that if location info cannot be found then the rider is not available 
  */
 
+  const google = window.google;
 
-  function  MarkerMapper({data,style,style0}) {
-    const messages =data;
+  function  MarkerMapper({data}) {
+    const riders = data;
   
     return (
-      <div style={style0}>
-          {messages.map((message, index) => {
-            const [course, content] = message.split(/:(.+)/);
-  
-            return (
-              <Marker key={index}>
-              </Marker>
-            );
-          })}
-      </div>
+      <>
+        {riders.map((rider) => (
+              <Marker
+
+                icon={{
+                  url: require('../Images/Riderr.jpeg'),
+                  anchor: new google.maps.Point(5, 58),
+                  scaledSize:  new google.maps.Size(45,45)
+                }}
+
+                key={rider._id}
+
+                position={{
+                  lat: rider.Location[1],
+                  lng: rider.Location[0]
+                }}
+            
+                
+              />
+       ))}
+      </>
     );
   };
 
-  export default Mapper;
+  export default MarkerMapper;

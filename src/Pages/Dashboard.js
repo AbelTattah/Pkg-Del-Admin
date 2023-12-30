@@ -12,23 +12,25 @@ import {
 import BottomNavbar from "../Components/BottomNavbar";
 import comScience_logo from "../Images/comScience_logo.png";
 import { useEffect } from "react";
+import { Admin } from "../Admin/Admin";
 
-var google = window.google;
-const CustomMarker =  google.maps.OverlayView;
 
+const google =  window.google;
 export default function Dashboard() {
+
   const position = { lat: 5.524252, lng:-0.333984 };
   const position1 = {lat: 53.54992, lng: 10.00678}
 
   const [open, setOpen] = useState(false);
   var [loaded,setLoaded] = useState(false);
-
- 
+  const admin = new Admin();
+  var Markers=<></>;
 
   useEffect(()=>{
-    setTimeout(setLoaded(true),4000);
-    setTimeout(console.log(loaded),5000);
-  },[])
+   admin.seeAllMovingRiders();
+   setTimeout(()=>{Markers = admin.activeRidersMap;},2000);
+   setTimeout(()=>{setLoaded(true);},4000);
+  },[]);
 
   return (
     <APIProvider apiKey={"AIzaSyCb_LpwPQv5gjNrMGvd9NvtQdRj8NwgrLk"}>
@@ -40,16 +42,22 @@ export default function Dashboard() {
       </div>
       <div style={{ height: "80vh", width: "100%",display:"flex",flexDirection:"row" }}>
         <Map style={{ height: "100%", width: "94%"}} zoom={13} center={position}>
-          
-
-    <Marker  position={position1} />
+        
     <Marker icon={{
         url: require('../Images/Riderr.jpeg'),
         anchor: new google.maps.Point(5, 58),
         scaledSize:  new google.maps.Size(45,45)
       }}  position={position} >
     </Marker>
-
+  
+    <>
+      {(loaded)?(<Markers></Markers>):( <Marker icon={{
+        url: require('../Images/Riderr.jpeg'),
+        anchor: new google.maps.Point(5, 58),
+        scaledSize:  new google.maps.Size(45,45)
+      }}  position={position1} >
+    </Marker>)}
+    </>
         </Map>
         <div>
 
