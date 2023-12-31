@@ -6,7 +6,7 @@ function BottomNavbar() {
   return (
     <div id='bnv'>
          <Link to="Dashboard" id="link" >Dashboard</Link>
-         <Link to="Form" id="link" >Form</Link>
+         <Link to="Control" id="link" >Control</Link>
          <Link to="Help" id="link" >Help</Link>
          <Link to="Ins" id="link" >Instructor</Link> 
          <Link to="Login" id="link" >Logout</Link>

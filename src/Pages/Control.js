@@ -6,7 +6,7 @@ import Footer from '../Components/footer';
 import "../Styling/form.css"
 
 
-function MissingGradeForm() {
+function Control() {
   return (
     <div className='Mainn'>
     <div className='topSection'>
@@ -43,10 +43,10 @@ function MissingGradeForm() {
           <BottomNavbar />
         </div>
     <div className='bottom'>
-       <text>University of Ghana @2023</text>
+       <text>PKGDEL @2023</text>
     </div>
 </div>
   )
 }
 
-export default MissingGradeForm
+export default Control

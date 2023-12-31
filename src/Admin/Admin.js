@@ -34,7 +34,7 @@ class Admin {
         this.dbresponse ="";
         this.isloggedIn = false;
         this.isRegistered = false;
-        this.activeRiders={};
+        this.activeRiders=[];
         this.activeRidersMap=<></>
         this.avrdfind = false;
     }

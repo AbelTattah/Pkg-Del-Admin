@@ -1,20 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  BrowserRouter
-} from "react-router-dom";
 import Homepage from './Pages/Homepage'
 import Login from './Pages/Login';
 import Dashboard from './Pages/Dashboard';
 import GradeReport from './Pages/GradeReport';
 import HelpandSupport from './Pages/HelpandSupport';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import MissingGradeForm from './Pages/MissingGradeForm';
 import InstructorContact from './Pages/InstructorContact';
 import Register from './Pages/Register';
+import Control from './Pages/Control';
 
  
 
@@ -33,7 +28,7 @@ root.render(
         <Homepage />
         </Route>
         <Route path="/Form">
-        <MissingGradeForm />
+        <Control />
         </Route>
         <Route path="/Help">
         <HelpandSupport />

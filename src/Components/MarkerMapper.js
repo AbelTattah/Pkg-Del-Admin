@@ -23,27 +23,23 @@ import React from "react";
   const google = window.google;
 
   function  MarkerMapper({data}) {
-    const riders = data;
+    const riders =data;
   
     return (
       <>
         {riders.map((rider) => (
               <Marker
-
                 icon={{
-                  url: require('../Images/Riderr.jpeg'),
+                  url: require('../Images/Riderr.png'),
                   anchor: new google.maps.Point(5, 58),
                   scaledSize:  new google.maps.Size(45,45)
                 }}
-
                 key={rider._id}
-
                 position={{
-                  lat: rider.Location[1],
-                  lng: rider.Location[0]
+                  lat: rider.Location[0],
+                  lng: rider.Location[1]
                 }}
-            
-                
+                title={`${rider.FirstName} ${rider.LastName}`}
               />
        ))}
       </>
