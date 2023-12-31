@@ -8,7 +8,7 @@ function BottomNavbar() {
          <Link to="Dashboard" id="link" >Dashboard</Link>
          <Link to="Control" id="link" >Control</Link>
          <Link to="Help" id="link" >Help</Link>
-         <Link to="Ins" id="link" >Instructor</Link> 
+         <Link to="Ins" id="link" >Messaging</Link> 
          <Link to="Login" id="link" >Logout</Link>
     </div>
   )

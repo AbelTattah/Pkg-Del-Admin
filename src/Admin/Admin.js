@@ -37,6 +37,8 @@ class Admin {
         this.activeRiders=[];
         this.activeRidersMap=<></>
         this.avrdfind = false;
+        this.riders =[];
+        this.customers = [];
     }
 
     setPassndEmail(email,password) {
@@ -102,16 +104,50 @@ class Admin {
       
     }
     
-    viewAllUsers() {
-       
+    viewAllUsers() 
+    {
+      axios({
+        method: 'get',
+        url: 'http://localhost:4000/admin/avriders',
+        responseType: 'stream'
+      })
+      .then((response)=>{
+        this.riders = response.data;
+        console.log("Riders");
+        console.dir(this.riders);
+      })
+      .catch((error)=>{
+        console.log(error.message);
+        console.log("An error occured while fetching riders");
+      });
+
+      axios({
+        method: 'get',
+        url: 'http://localhost:4000/admin/avcustomers',
+        responseType: 'stream'
+      })
+      .then((response)=>{
+        this.customers = response.data;
+        console.log("Customers");
+        console.dir(this.customers);
+        
+      })
+      .catch((error)=>{
+        console.log(error.message);
+        console.log("An error occured while fetching customers");
+      });
+
     }
+
     seeAllMovingPackages() {
       //Get all the coordinates of all the riders 
     }
+
     #sendGeneralNotifications() {
       //Send messages to both user and riders
       //Make sure info previous message information is not lost
     }
+
     #removeUser() {
       //remove a particular customer
     }

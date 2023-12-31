@@ -4,41 +4,53 @@ import data from "../Data/Simulated";
 import BottomNavbar from '../Components/BottomNavbar';
 import Footer from '../Components/footer';
 import "../Styling/form.css"
+import Mapper from '../Components/Mapper';
+import { Admin } from '../Admin/Admin';
+import { useEffect } from 'react';
+import { useRef } from 'react';
 
 
 function Control() {
+
+  const admin = new Admin();
+  var temp0 = useRef([{
+    "FirstName": "No user info available",
+		"LastName": "",
+		"UserName": "",
+		"Email": "",
+		"Location": [
+		]
+  }]);
+  var temp1 = useRef([{
+    "FirstName": "No user info available",
+		"LastName": "",
+		"UserName": "",
+		"Email": "",
+		"Location": [
+		]
+  }]);
+
+
+
+  useEffect(()=>{
+     admin.viewAllUsers();
+     setTimeout(()=>{
+         temp0 = admin.riders;
+         temp1 = admin.customers;  
+     },3000);
+  },[])
+
   return (
     <div className='Mainn'>
-    <div className='topSection'>
-          <img className='logo' height="50px" width="35px" src={comScience_logo}></img> 
+    <div className='topSection'> 
       <div className='title'>
-        <div className='title0'><text>Missing Grade Report System</text></div>
-        <div className='title1'><text>Missing Grade Form</text></div>
+        <div className='title0'><text>Payload</text></div>
+        <div className='title1'><text>Admin Control</text></div>
       </div>
     </div>
-         <div className='fform'>
-          <form id='f'>
-                 <label>Full Name:<br></br>
-                     <input id='input0'></input>
-                 </label><br></br>
-                 <label>Course:<br></br>
-                     <input id='input0'></input>
-                 </label><br></br>
-                 <label>Lecturer:<br></br>
-                     <input id='input0'></input>
-                 </label><br></br>
-                 <label>Problem:<br></br>
-                 <input name='issue' id='mi' type='radio'></input>
-                  <label>Missing grade</label><br></br>
-                 <input name='issue' id="mis" type='radio'></input>
-                  <label>Incorrect grade</label>
-                 </label>
-                 <label>More info (Optional):<br></br>
-                     <textarea id='textArea'></textarea>
-                 </label><br></br>
-                 <button id='submit'>Submit</button>
-          </form>
-         </div>
+    <div className='control'>
+    <Mapper data={temp0.current} style={{}} style0={{}} /> <Mapper style={{}} style0={{}} data={temp1.current}/>
+    </div>
          <div id="navbar">
           <BottomNavbar />
         </div>

@@ -27,7 +27,7 @@ root.render(
         <Route path="/Home">
         <Homepage />
         </Route>
-        <Route path="/Form">
+        <Route path="/Control">
         <Control />
         </Route>
         <Route path="/Help">
