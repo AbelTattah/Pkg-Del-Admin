@@ -82,25 +82,17 @@ class Admin {
     }
 
     seeAllMovingRiders() {
+   var func = async() => {
+     try {
+      const response = await axios.get('http://localhost:4000/admin/avrideron');
+      this.activeRiders = response.data;
+      this.avrdfind = true;
+     } catch (error) {
+      console.log(error.message);
+     }
+    }
 
-      axios({
-        method: 'get',
-        url: 'http://localhost:4000/admin/avrideron',
-        responseType: 'stream'
-      })
-      .then((response)=>{
-        this.activeRiders = response.data
-         //Map the active riders 
-         console.dir(response.data);
-        this.activeRidersMap = <MarkerMapper data={response.data} />;
-        this.avrdfind = true;
-        console.dir(`Success:${this.avrdfind}`);     
-        console.dir(this.activeRiders);
-      })
-      .catch((error)=>{
-        console.log(error.message);
-        console.log("An error occured while fetching active riders");
-      });
+    func();
       
     }
     

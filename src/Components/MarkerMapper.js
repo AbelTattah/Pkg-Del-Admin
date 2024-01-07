@@ -22,12 +22,12 @@ import React from "react";
 
   const google = window.google;
 
-  function  MarkerMapper({data}) {
-    const riders =data;
+  function  MarkerMapper(data) {
+   
   
     return (
       <>
-        {riders.map((rider) => (
+        {data.map((rider) => (
               <Marker
                 icon={{
                   url: require('../Images/Riderr.png'),

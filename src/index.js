@@ -4,7 +4,6 @@ import './index.css';
 import Homepage from './Pages/Homepage'
 import Login from './Pages/Login';
 import Dashboard from './Pages/Dashboard';
-import GradeReport from './Pages/GradeReport';
 import HelpandSupport from './Pages/HelpandSupport';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import InstructorContact from './Pages/InstructorContact';

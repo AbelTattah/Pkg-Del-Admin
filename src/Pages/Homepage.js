@@ -15,7 +15,7 @@ function Homepage({id}) {
           <div className="title1"><text>Home</text></div>
         </div>
         <button className="loginButton">
-              <Link id="link0" to="Login">Sign in</Link>
+              <Link id="link0" to="Dashboard">Sign in</Link>
         </button>
       </div>
       <div className="middleSectionh">
