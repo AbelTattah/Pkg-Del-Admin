@@ -18,9 +18,9 @@ import MarkerMapper from "../Components/MarkerMapper";
 const google = window.google;
 
 export default function Dashboard() {
+
   const [position, setPosition] = useState({ lat: 5.524252, lng: -0.333984 });
   const [p2,setP2] = useState({lat: 5.524252, lng: -1.333984});
-
   const [open, setOpen] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [activeRiders, setActiveRiders] = useState(0);
@@ -44,19 +44,15 @@ export default function Dashboard() {
 
 
   const admin = new Admin();
-  var Markers = <></>;
-
-
-    
- 
-  var lat = 0;
   
   useEffect(() => {
+
+    // Get latest rider info and render on map
     const interval = setInterval(() => {
       admin.seeAllMovingRiders();
       setTimeout(() => {
         setActiveRiders(admin.activeRiders.length);
-        setPosition({ lat: admin.activeRiders[0]["Location"][0], lng:admin.activeRiders[0]["Location"][0] });     
+     //   setPosition({ lat: admin.activeRiders[0]["Location"][0], lng:admin.activeRiders[0]["Location"][0] }); 
       }, 2000);
     }, 3000);
 
@@ -69,39 +65,35 @@ export default function Dashboard() {
         <div className="title">
           <div className="title0">
             <text>Payload</text>
-          </div>
-          <div className="title1">
+             </div>
+             <div className="title1">
             <text>Home</text>
           </div>
         </div>
       </div>
       <div style={{ height: "80vh", width: "100%", display: "flex", flexDirection: "row" }}>
-        <Map style={{ height: "100%", width: "94%" }} zoom={13} center={position}>
-          <Marker
-            icon={{
-              url: require("../Images/Riderr.png"),
-              anchor: new google.maps.Point(5, 58),
-              scaledSize: new google.maps.Size(45, 45),
-            }}
-            position={position}
-          />
-          {(admin.avrdfind)?( <MarkerMapper data={admin.activeRiders} />):(<></>)}
-         
+        <Map style={{ height: "100%", width: "94%" }} zoom={13} center={position}>   
+          {(open)?(  
+             <MarkerMapper data={[admin.activeRiders]} />
+          ):(
+            <></>
+          )}     
         </Map>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div>
-            Active riders:
-            <br></br>
+             Active riders:
+             <br></br>
+                {activeRiders}
+               </div>
+               <div>
+             Total riders:
+              <br></br>
             {activeRiders}
-          </div>
-          <div>
-            Total riders:
-            <br></br>
-            {activeRiders}
-          </div>
+            </div>
+          <button onClick={()=>setOpen(true)} >Show Marker</button>
         </div>
       </div>
-      <BottomNavbar />
+      <BottomNavbar />   
     </APIProvider>
   );
 }

@@ -4,13 +4,17 @@ import { getAuth,signInWithEmailAndPassword , createUserWithEmailAndPassword } f
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import MarkerMapper from "../Components/MarkerMapper";
+
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyD2zccHkFhUb16CPQW_yauasQlyKkxjmP0",
+  apiKey: `${API_KEY}`,
   authDomain: "pkgdel-b7b61.firebaseapp.com",
   projectId: "pkgdel-b7b61",
   storageBucket: "pkgdel-b7b61.appspot.com",
@@ -81,12 +85,17 @@ class Admin {
        });
     }
 
+
+
+
     seeAllMovingRiders() {
-   var func = async() => {
+     var func = async() => {
      try {
       const response = await axios.get('http://localhost:4000/admin/avrideron');
-      this.activeRiders = response.data;
+      this.activeRiders = response.data
+  
       this.avrdfind = true;
+      
      } catch (error) {
       console.log(error.message);
      }

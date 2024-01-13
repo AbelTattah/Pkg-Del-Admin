@@ -1,5 +1,5 @@
 import { Marker } from "@vis.gl/react-google-maps";
-import React from "react";
+import React, { useEffect } from "react";
 
 
 /*
@@ -23,7 +23,12 @@ import React from "react";
   const google = window.google;
 
   function  MarkerMapper(data) {
+    useEffect(() => {
+      console.log(data);
+      console.log(typeof(data));
+    });
    
+    if (data.length!= 0) {
   
     return (
       <>
@@ -44,6 +49,11 @@ import React from "react";
        ))}
       </>
     );
+  }
+  
+   else {
+    return <></>;
+   }
   };
 
   export default MarkerMapper;

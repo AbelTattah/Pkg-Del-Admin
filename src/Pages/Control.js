@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import comScience_logo from "../Images/comScience_logo.png"
 import data from "../Data/Simulated";
 import BottomNavbar from '../Components/BottomNavbar';
@@ -13,7 +13,7 @@ import { useRef } from 'react';
 function Control() {
 
   const admin = new Admin();
-  var temp0 = useRef([{
+  var [temp0,setTemp0 ] = useState([{
     "FirstName": "No user info available",
 		"LastName": "",
 		"UserName": "",
@@ -21,7 +21,7 @@ function Control() {
 		"Location": [
 		]
   }]);
-  var temp1 = useRef([{
+  var [temp1,setTemp1 ] = useState([{
     "FirstName": "No user info available",
 		"LastName": "",
 		"UserName": "",
@@ -35,8 +35,8 @@ function Control() {
   useEffect(()=>{
      admin.viewAllUsers();
      setTimeout(()=>{
-         temp0 = admin.riders;
-         temp1 = admin.customers;  
+        setTemp0( admin.riders);
+        setTemp1(admin.customers);  
      },3000);
   },[])
 
@@ -49,7 +49,7 @@ function Control() {
       </div>
     </div>
     <div className='control'>
-    <Mapper data={temp0.current} style={{}} style0={{}} /> <Mapper style={{}} style0={{}} data={temp1.current}/>
+    <Mapper data={temp0} style={{}} style0={{}} /> <Mapper style={{}} style0={{}} data={temp1}/>
     </div>
          <div id="navbar">
           <BottomNavbar />
