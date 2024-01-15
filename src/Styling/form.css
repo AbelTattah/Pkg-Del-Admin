@@ -12,6 +12,14 @@
 }
 
 
+.stats {
+
+  margin-left: 90px;
+
+
+}
+
+
 @media screen and (max-width:450px) {
     .fform {
       background-color: #444;

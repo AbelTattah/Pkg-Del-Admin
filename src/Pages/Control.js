@@ -45,7 +45,7 @@ function Control () {
           <div className="title1"><text>Admin Control</text></div>
         </div>
       </div>
-      <h3>Riders</h3>
+      <h3>Customers</h3>
       <div className="control">
         <Mapper
           data={temp0}
@@ -57,10 +57,19 @@ function Control () {
             padding: '20px',
             borderRadius: '5px',
           }}
-          style0={{width: '50%', height: '90%', padding: '10px'}}
+          style0={{width: '40%', height: '90%', padding: '10px'}}
         />
+        <div className='stats'>
+           <h4>Total</h4>
+           <div>
+
+           </div>
+           <div>
+            
+           </div>
+        </div>
       </div>
-      <h3>Customers</h3>
+      <h3>Riders</h3>
       <div className="control">
         <Mapper
           data={temp1}
