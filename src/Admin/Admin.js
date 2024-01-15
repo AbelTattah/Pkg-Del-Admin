@@ -31,6 +31,7 @@ const analytics = getAnalytics(app);
 const auth = getAuth();
 
 class Admin {
+
     constructor() {
         this.type = "Admin";
         this.email = "";
@@ -105,39 +106,24 @@ class Admin {
       
     }
     
-    viewAllUsers() 
-    {
-      axios({
-        method: 'get',
-        url: 'http://localhost:4000/admin/avriders',
-        responseType: 'stream'
-      })
-      .then((response)=>{
+   viewAllUsers = async() => {
+   
+      try {
+        const response = await axios.get('http://localhost:4000/admin/avriders');
         this.riders = response.data;
-        console.log("Riders");
-        console.dir(this.riders);
-      })
-      .catch((error)=>{
-        console.log(error.message);
-        console.log("An error occured while fetching riders");
-      });
+        console.log(this.customers);
+      } catch (error) {
+        console.log(error.message);  
+     }
 
-      axios({
-        method: 'get',
-        url: 'http://localhost:4000/admin/avcustomers',
-        responseType: 'stream'
-      })
-      .then((response)=>{
-        this.customers = response.data;
-        console.log("Customers");
-        console.dir(this.customers);
-        
-      })
-      .catch((error)=>{
-        console.log(error.message);
-        console.log("An error occured while fetching customers");
-      });
-
+     try {
+      const response = await axios.get('http://localhost:4000/admin/avcustomers');
+      this.customers = response.data;
+      console.log(this.customers);
+     } catch (error) {
+      console.log(error.message);
+     }
+     
     }
 
     seeAllMovingPackages() {

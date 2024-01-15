@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
-import comScience_logo from "../Images/comScience_logo.png"
 import "../Styling/login.css"
 import Dashboard from './Dashboard';
 import { Admin } from '../Admin/Admin';

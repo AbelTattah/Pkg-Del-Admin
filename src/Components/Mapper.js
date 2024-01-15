@@ -47,11 +47,13 @@ var temp = [
 ]
 
   function  Mapper({data,style,style0}) {
+
+    
    
     return (
       <div style={style0}>
            {
-            temp.map((rider) => (
+            data && data.map((rider) => (
               <div style={style}>
                 <text>{`${rider.FirstName} ${rider.LastName}`}</text>
               </div>

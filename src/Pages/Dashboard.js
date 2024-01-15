@@ -10,7 +10,6 @@ import {
   InfoWindow,
 } from "@vis.gl/react-google-maps";
 import BottomNavbar from "../Components/BottomNavbar";
-import comScience_logo from "../Images/comScience_logo.png";
 import { Admin } from "../Admin/Admin";
 import MarkerMapper from "../Components/MarkerMapper";
 
@@ -23,7 +22,7 @@ export default function Dashboard() {
   const [p2,setP2] = useState({lat: 5.524252, lng: -1.333984});
   const [open, setOpen] = useState(false);
   const [loaded, setLoaded] = useState(false);
-  const [activeRiders, setActiveRiders] = useState(0);
+  const [activeRiderCount, setActiveRiderCount] = useState(0);
   const temp = useRef([
     {
       _id: "6588067ffab09a8173ce8e83",
@@ -51,7 +50,7 @@ export default function Dashboard() {
     const interval = setInterval(() => {
       admin.seeAllMovingRiders();
       setTimeout(() => {
-        setActiveRiders(admin.activeRiders.length);
+        setActiveRiderCount(admin.activeRiders.length);
      //   setPosition({ lat: admin.activeRiders[0]["Location"][0], lng:admin.activeRiders[0]["Location"][0] }); 
       }, 2000);
     }, 3000);
@@ -74,7 +73,7 @@ export default function Dashboard() {
       <div style={{ height: "80vh", width: "100%", display: "flex", flexDirection: "row" }}>
         <Map style={{ height: "100%", width: "94%" }} zoom={13} center={position}>   
           {(open)?(  
-             <MarkerMapper data={[admin.activeRiders]} />
+             <MarkerMapper data={admin.activeRiders} />
           ):(
             <></>
           )}     
@@ -83,12 +82,12 @@ export default function Dashboard() {
           <div>
              Active riders:
              <br></br>
-                {activeRiders}
+                {activeRiderCount}
                </div>
                <div>
              Total riders:
               <br></br>
-            {activeRiders}
+            {admin.riders.length}
             </div>
           <button onClick={()=>setOpen(true)} >Show Marker</button>
         </div>

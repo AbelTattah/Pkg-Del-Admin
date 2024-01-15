@@ -1,6 +1,5 @@
 import React from 'react';
 import BottomNavbar from '../Components/BottomNavbar';
-import comScience_logo from '../Images/comScience_logo.png';
 import {Link} from 'react-router-dom';
 import Footer from '../Components/footer';
 import "../Styling/generalStyles.css"
