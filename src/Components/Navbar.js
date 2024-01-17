@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom'
 import './styling/Navbar.css'
 
-function BottomNavbar() {
+function Navbar() {
   return (
     <div id='bnv'>
          <Link to="Dashboard" id="link" >Dashboard</Link>
@@ -14,4 +14,4 @@ function BottomNavbar() {
   )
 }
 
-export default BottomNavbar;
+export default Navbar;

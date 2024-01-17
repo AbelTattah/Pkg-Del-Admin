@@ -1,10 +1,9 @@
 import React from "react";
 import BottomNavbar from "../Components/Navbar";
-import "../Styling/help.css";
 
-function HelpandSupport() {
+function Messaging() {
   return (
-    <div className="Main">
+    <div className="Mainn">
       <div className="topSection">
         <div className="title">
           <div className="title0">
@@ -15,15 +14,12 @@ function HelpandSupport() {
           </div>
         </div>
       </div>
-
       <div id="navbar">
         <BottomNavbar />
       </div>
-      <div className="bottom">
-        <text>PKGDEL @2023</text>
-      </div>
+      <div id="footer"></div>
     </div>
   );
 }
 
-export default HelpandSupport;
+export default Messaging;

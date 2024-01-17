@@ -2,15 +2,12 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 15px;
-
+    margin-right: 20px;
    }
    #link {
     text-decoration: none;
     padding: 7px;
-    
+    color: #000;
     font-weight: 600;
     margin-bottom: 46px;
     border-radius: 7px;
@@ -19,8 +16,7 @@
    }
 
    #link:hover {
-    border-style: inset inset;
-    border-width: 1px;
+    color: yellowgreen;
    }
 
 @media screen and (max-width:450px) {

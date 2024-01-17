@@ -6,9 +6,10 @@ import Login from './Pages/Login';
 import Dashboard from './Pages/Dashboard';
 import HelpandSupport from './Pages/HelpandSupport';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import InstructorContact from './Pages/InstructorContact';
+import Messaging from './Pages/Messaging';
 import Register from './Pages/Register';
 import Control from './Pages/Control';
+
 
  
 
@@ -36,7 +37,7 @@ root.render(
         <Dashboard />
         </Route>
         <Route path="/Ins">
-        <InstructorContact />
+        <Messaging />
         </Route>
         <Route path="/adreg">
         <Register />

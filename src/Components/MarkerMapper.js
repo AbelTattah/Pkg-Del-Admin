@@ -1,7 +1,6 @@
 import { Marker } from "@vis.gl/react-google-maps";
 import React, { useEffect } from "react";
 
-
 /*
    The aim of this component is to render multiple markers on the map based on the 
    riders available
@@ -20,40 +19,29 @@ import React, { useEffect } from "react";
    Meaning that if location info cannot be found then the rider is not available 
  */
 
-  const google = window.google;
+const google = window.google;
 
-  function  MarkerMapper(data) {
-    useEffect(() => {
-      console.log(data);
-      console.log(typeof(data));
-    });
-   
-    if (data.length!= 0) {
-  
+function MarkerMapper({ data }) {
+ 
     return (
       <>
-        {data.map((rider) => (
-              <Marker
-                icon={{
-                  url: require('../Images/Riderr.png'),
-                  anchor: new google.maps.Point(5, 58),
-                  scaledSize:  new google.maps.Size(45,45)
-                }}
-                key={rider._id}
-                position={{
-                  lat: rider.Location[0],
-                  lng: rider.Location[1]
-                }}
-                title={`${rider.FirstName} ${rider.LastName}`}
-              />
-       ))}
+        {data.map((rider,index) => (
+          <Marker
+            key={index}
+            icon={{
+              url: require("../Images/Riderr.png"),
+              anchor: new google.maps.Point(5, 58),
+              scaledSize: new google.maps.Size(45, 45),
+            }}
+            position={{
+              lat: rider.Location[0],
+              lng: rider.Location[1],
+            }}
+          />
+        ))}
       </>
     );
-  }
-  
-   else {
-    return <></>;
-   }
-  };
 
-  export default MarkerMapper;
+}
+
+export default MarkerMapper;
