@@ -38,7 +38,7 @@ function MarkerMapper({ data }) {
               lng: rider.Location[1],
             }}
         
-            label={ `ID: ${rider._id}`}
+            label={ `ID: ${rider._id.slice(0, -15)}`}
        
           />
         ))}

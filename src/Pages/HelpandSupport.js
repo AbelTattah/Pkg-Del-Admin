@@ -14,11 +14,12 @@ function HelpandSupport() {
             <text>Help and Support</text>
           </div>
         </div>
-      </div>
-
       <div id="navbar">
         <BottomNavbar />
       </div>
+      </div>
+
+      
       <div className="bottom">
         <text>PKGDEL @2023</text>
       </div>

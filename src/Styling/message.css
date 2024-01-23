@@ -1,0 +1,59 @@
+
+
+.MessagesMain {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 97%;
+}
+
+.messagesSearchbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    padding: 2px;
+    padding: 5px;
+    background-color: azure;
+}
+
+.messagesView {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70%;
+    background-color: beige;
+}
+
+.Message {
+    display: flex;
+    flex-direction:column;
+    height: 95%;
+    width:64%;
+    background-color: blanchedalmond;
+}
+
+.listOfUsers {
+    height: 100%;
+    width: 36%;
+    background-color: pink;
+}
+
+
+
+.previousMessages {
+    height: 70%;
+    width: 96%;
+    background-color: beige;
+}
+
+.sendMessage {
+    height: 30%;
+    width: 96%;
+    background-color:paleturquoise;
+}
+
+

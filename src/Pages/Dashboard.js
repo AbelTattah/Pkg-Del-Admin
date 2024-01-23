@@ -13,6 +13,7 @@ import BottomNavbar from "../Components/Navbar";
 import { Admin } from "../Admin/Admin";
 import MarkerMapper from "../Components/MarkerMapper";
 import Navbar from "../Components/Navbar";
+import "../Styling/dashboard.css";
 
 const google = window.google;
 
@@ -77,6 +78,10 @@ export default function Dashboard() {
           </div>
         </div>
         <Navbar />
+   
+      </div>
+      <div className="topSectionPanel">
+        
       </div>
       <div
         style={{
@@ -85,12 +90,16 @@ export default function Dashboard() {
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
+          alignItems: "center",
+          marginTop: "-10px",
+          marginLeft: "-3px",
         }}
       >
+   
         <Map
           style={{
-            height: "100%",
-            width: "80%",
+            height: "90%",
+            width: "82.9%",
             marginLeft: "5px",
             marginRight: "5px",
           }}
@@ -104,16 +113,20 @@ export default function Dashboard() {
           )}
       
         </Map>
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div className="Stats">
           <div>
-            Active riders:
+            Total riders:
+            {admin.riders.length}
             <br></br>
+            Active riders:
             {activeRiderCount}
           </div>
           <div>
-            Total riders:
-            <br></br>
+            Total customers:
             {admin.riders.length}
+            <br></br>
+            Active customers:
+            {activeRiderCount}
           </div>
           <button onClick={() => setOpen(true)}>Show Marker</button>
         </div>
