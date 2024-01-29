@@ -61,10 +61,12 @@
   display: flex;
   flex-direction: column;
   border-style: groove groove;
-  gap: 10px;
+  justify-content: space-evenly;
+  gap: 20px;
   padding: 20px;
-  width: 8%;
+  width: 18%;
   margin-left: 14px;
+  font-weight: 600;
 }
 
 .topSectionPanel {
@@ -73,11 +75,26 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 7vh;
   width: 96%;
   border-style: groove groove;
+}
+
+.Buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-left: 10px;
+}
+
+.AdminInfo {
+  margin-right: 10px;
+}
+
+.AdminName {
+  font-weight: 600;
 }
 
 @media screen and (max-width: 450px) {

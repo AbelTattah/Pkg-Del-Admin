@@ -1,0 +1,6 @@
+text:hover {
+    background-image: radial-gradient(#444,#666);
+    height: 20px;
+    width: 90px;
+    color: black;
+}
