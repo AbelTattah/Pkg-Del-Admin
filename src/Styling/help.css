@@ -1,15 +1,15 @@
 .middles {
+  padding: 20px;
+}
+
+@media screen and (max-width: 450px) {
+  .middles {
     padding: 20px;
+  }
 }
 
-@media screen and (max-width:450px) {
-    .middles {
-        padding: 20px;
-    }
-}
-
-@media screen and (max-width:800px) {
-    .middles {
-        padding: 20px;
-    }
+@media screen and (max-width: 800px) {
+  .middles {
+    padding: 20px;
+  }
 }

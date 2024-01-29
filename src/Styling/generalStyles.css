@@ -20,7 +20,7 @@ h3 {
   margin-left: 17px;
 }
 
-@media screen and (max-width:450px) {
+@media screen and (max-width: 450px) {
   .topSection {
     background-color: #0000ff65;
     color: white;
@@ -34,9 +34,7 @@ h3 {
     gap: 4%;
   }
 
-
   .logo {
     margin-left: 0px;
   }
-
 }

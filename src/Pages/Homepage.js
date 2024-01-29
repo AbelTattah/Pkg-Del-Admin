@@ -1,30 +1,30 @@
-import React from "react";
-import BottomNavbar from "../Components/Navbar";
-import { Link } from "react-router-dom";
-import "../Styling/generalStyles.css";
-import "../Styling/homepage.css";
+import React from 'react'
+import BottomNavbar from '../Components/Navbar'
+import { Link } from 'react-router-dom'
+import '../Styling/generalStyles.css'
+import '../Styling/homepage.css'
 
-function Homepage({ id }) {
+function Homepage ({ id }) {
   return (
-    <div className="hMain">
-      <div className="topSection">
-        <div className="title">
-          <div className="title0">
+    <div className='hMain'>
+      <div className='topSection'>
+        <div className='title'>
+          <div className='title0'>
             <text>Payload</text>
           </div>
-          <div className="title1">
+          <div className='title1'>
             <text>Home</text>
           </div>
         </div>
-        <button className="loginButton">
-          <Link id="link0" to="Dashboard">
+        <button className='loginButton'>
+          <Link id='link0' to='Dashboard'>
             Sign in
           </Link>
         </button>
       </div>
-      <div className="middleSectionh">
-        <div className="middleSectionh0">
-          <div className="m0texth">
+      <div className='middleSectionh'>
+        <div className='middleSectionh0'>
+          <div className='m0texth'>
             <text>
               <h2>Welcome,</h2>
             </text>
@@ -34,7 +34,7 @@ function Homepage({ id }) {
             </text>
             <br />
             <p />
-            <text></text>
+            <text />
             <ul>
               <li>Send Packages to others at affordable fees</li>
               <li>Track Packages in real-time</li>
@@ -42,11 +42,11 @@ function Homepage({ id }) {
             </ul>
             Use the bottom Navbar to navigate the site.
             <br />
-            <p id="dcs">Brought to you by Tattah Systems</p>
+            <p id='dcs'>Brought to you by Tattah Systems</p>
           </div>
         </div>
-        <div className="middleSection1h">
-          <div className="m1texth">
+        <div className='middleSection1h'>
+          <div className='m1texth'>
             Responses to Package delivery requests made are usually made <br />
             within minutes.
             <p />
@@ -66,9 +66,9 @@ function Homepage({ id }) {
           </div>
         </div>
       </div>
-      <p style={{ color: "white" }}>University of Ghana@2023</p>
+      <p style={{ color: 'white' }}>University of Ghana@2023</p>
     </div>
-  );
+  )
 }
 
-export default Homepage;
+export default Homepage

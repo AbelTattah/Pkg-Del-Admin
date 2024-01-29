@@ -1,17 +1,17 @@
 class Observer extends Admin {
-  constructor() {
+  constructor () {
     super(
       firstName,
       LastName,
       id,
-      (type = "Obs"),
+      (type = 'Obs'),
       username,
       (isloggedIn = false),
       email
-    );
-    this.deliveryId = "N/A";
-    this.riderUsername = "N/A";
+    )
+    this.deliveryId = 'N/A'
+    this.riderUsername = 'N/A'
   }
 
-  sendRiderMessage() {}
+  sendRiderMessage () {}
 }

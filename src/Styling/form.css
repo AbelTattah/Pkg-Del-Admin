@@ -9,12 +9,8 @@
   flex-direction: row;
 }
 
-
 .stats {
-
   margin-left: 90px;
-
-
 }
 
 .control {
@@ -28,7 +24,7 @@
   flex-direction: column;
 }
 
-@media screen and (max-width:450px) {
+@media screen and (max-width: 450px) {
   .fform {
     background-color: #444;
     height: 70vh;
@@ -67,7 +63,6 @@
     height: 30%;
     width: 100%;
     padding: 2px;
-
   }
 
   #submit {
@@ -78,8 +73,7 @@
   }
 }
 
-
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   .fform {
     background-color: #444;
     height: 60vh;
@@ -117,7 +111,6 @@
     height: 30%;
     width: 100%;
     padding: 2px;
-
   }
 
   #submit {
