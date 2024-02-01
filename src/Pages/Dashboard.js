@@ -41,6 +41,10 @@ export default function Dashboard() {
       Location: [6.33, -0.67],
     },
   ]);
+  
+  function Log() {
+    console.log(1);
+  }
 
   const admin = new Admin();
 
@@ -83,7 +87,7 @@ export default function Dashboard() {
       </div>
       <div className="topSectionPanel">
       <div className="Buttons">
-        <Button label="Show Riders"/>
+        <Button onClick={()=>Log()} label="Show Riders"/>
         <Button label="Show Recievers" />
         <Button label="Graph" />
       </div>

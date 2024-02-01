@@ -1,12 +1,35 @@
 .control {
-  max-width: 80vw;
-  min-width: 60vw;
-  max-height: 90vh;
-  min-height: 80vh;
+  width: 80vw;
+  height: 67vh;
   border-style: groove groove;
   margin: 20px;
   display: flex;
   flex-direction: row;
+}
+
+.SearchBar {
+  align-items: center;
+  width: 80vw;
+  height: 7vh;
+  border-style: groove groove;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -4px;
+  flex-direction: row;
+}
+
+.SearchBarTitle {
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.Search {
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .stats {
@@ -14,7 +37,6 @@
 }
 
 .control {
-  overflow-y: scroll;
 }
 
 .Mainn {
@@ -22,6 +44,24 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.users {
+  height: 100%;
+  width: 50%;
+  border-right-style: groove;
+  border-right-width: 2px;
+  border-right-color: black;
+  overflow-y: scroll;
+
+}
+.info {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 450px) {
