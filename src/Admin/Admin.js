@@ -32,8 +32,7 @@ const analytics = getAnalytics(app)
 
 const auth = getAuth()
 
-
-//Admin Class with all methods and properties for specified in the Requirements document
+// Admin Class with all methods and properties for specified in the Requirements document
 class Admin {
   constructor () {
     this.type = 'Admin'
@@ -123,8 +122,8 @@ class Admin {
     }
   }
 
-  //Get details of a Customer
-  getCustomerDetails = async(customer) => {
+  // Get details of a Customer
+  getCustomerDetails = async (customer) => {
     try {
       const response = await axios.get(
         `http://localhost:4000/admin/avcustdetails/${customer}`
@@ -135,10 +134,9 @@ class Admin {
       console.log(error.message)
     }
   }
-  
-  
-  //Get details of a Rider
-  getRiderDetails = async(rider) => {
+
+  // Get details of a Rider
+  getRiderDetails = async (rider) => {
     try {
       const response = await axios.get(
         `http://localhost:4000/admin/avriderdetails/${rider}`
@@ -149,8 +147,7 @@ class Admin {
       console.log(error.message)
     }
   }
-  
-  
+
   seeAllMovingPackages () {
     // Get all the coordinates of all the riders
     for (let i = 0; i < this.activeRiders.length; i++) {
