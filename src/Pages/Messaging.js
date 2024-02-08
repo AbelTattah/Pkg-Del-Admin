@@ -38,9 +38,9 @@ function Messaging() {
                     </div>
                     <div className="message">
                         {/**
-                          Use the map function to create a list that renders the messsage as a list after it has been Entered into the chat
+                          Use the JS to create a list that renders the messsage as a list after it has been Entered into the chat
                           Do the left ones separately or maybe toggle between left and right.
-                          Use the indexes as a way of shifting where the indices take a side, either left or right
+                          Use the indices as a way of shifting where the indices take a side, either left or right
                       */}
                         <div className="previousMessages">
                             <div className="leftMessages">
