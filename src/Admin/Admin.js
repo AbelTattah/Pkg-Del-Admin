@@ -57,7 +57,7 @@ class Admin {
   register (FirstName, LastName, Username) {
     // Verify username fist in Mongo DB collection by trying to create a document
     axios
-      .post('http://localhost:4000/admin/adminregister', {
+      .post('https://payloadserver.onrender.com/admin/adminregister', {
         FirstName,
         LastName,
         UserName: Username,
@@ -95,7 +95,7 @@ class Admin {
 
   seeAllMovingRiders = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/admin/avrideron')
+      const response = await axios.get('https://payloadserver.onrender.com/admin/avrideron')
       this.activeRiders = response.data
       this.avrdfind = true
     } catch (error) {
@@ -105,7 +105,7 @@ class Admin {
 
   viewAllUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/admin/avriders')
+      const response = await axios.get('https://payloadserver.onrender.com/admin/avriders')
       this.riders = response.data
       console.log(this.customers)
     } catch (error) {
@@ -114,7 +114,7 @@ class Admin {
 
     try {
       const response = await axios.get(
-        'http://localhost:4000/admin/avcustomers'
+        'https://payloadserver.onrender.com/admin/avcustomers'
       )
       this.customers = response.data
     } catch (error) {
@@ -126,7 +126,7 @@ class Admin {
   getCustomerDetails = async (customer) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/admin/avcustdetails/${customer}`
+        `https://payloadserver.onrender.com/admin/avcustdetails/${customer}`
       )
       this.customers = response.data
       console.log(this.customers)
@@ -139,7 +139,7 @@ class Admin {
   getRiderDetails = async (rider) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/admin/avriderdetails/${rider}`
+        `https://payloadserver.onrender.com/admin/avriderdetails/${rider}`
       )
       this.riders = response.data
       console.log(this.riders)
