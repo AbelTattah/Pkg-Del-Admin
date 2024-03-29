@@ -92,6 +92,14 @@ Or
 
 Navigate to [tasks doc](/docs/tasks.md)
 
+## TroubleShooting
+### Known Issues
+1. Map not showing
+   #### Fix
+      Follow this [google_maps_documentation](https://developers.google.com/maps/documentation/javascript/cloud-setup)
+      to setup google maps in your copy of this project
+
+
 ## License
 
 This project is licensed under the [MIT License](./docs/LICENSE.md).
